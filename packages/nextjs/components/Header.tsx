@@ -18,7 +18,7 @@ type HeaderMenuLink = {
 export const menuLinks: HeaderMenuLink[] = [
   {
     label: "Home",
-    href: "/",
+    href: "/3d",
     icon: <span className="material-icons text-sm flex items-center">home</span>,
   },
   {
@@ -95,9 +95,9 @@ export const Header = () => {
 
   return (
     <div
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? "shadow-lg backdrop-blur-lg" : ""
-      } bg-indigo-100/90 dark:bg-gray-900/90`}
+      className={`fixed top-0 z-50 w-full transition-all duration-300 backdrop-blur-sm ${
+        isScrolled ? "shadow-lg backdrop-blur-md bg-white/50 dark:bg-gray-900/50" : "bg-white/30 dark:bg-gray-900/30"
+      }`}
     >
       <div className="px-4 mx-auto max-w-7xl">
         <div className="flex justify-between items-center py-3">
@@ -136,7 +136,7 @@ export const Header = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-sm sm:text-lg font-bold tracking-wide leading-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                  IdeaPulse
+                  BuidlLand
                 </span>
                 <span className="text-[8px] sm:text-xs tracking-widest opacity-75 dark:text-gray-300">INNOVATION HUB</span>
               </div>

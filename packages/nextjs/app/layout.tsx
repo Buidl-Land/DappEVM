@@ -4,7 +4,7 @@ import { ThemeProvider } from "~~/components/ThemeProvider";
 import "~~/styles/globals.css";
 import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 
-export const metadata = getMetadata({ title: "IdeaPulse App", description: "Built with 🏗 IdeaPulse" });
+export const metadata = getMetadata({ title: "BuidlLand App", description: "Built with 🏗 BuidlLand" });
 
 const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
   return (

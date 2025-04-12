@@ -54,5 +54,9 @@
   "packageManager": "yarn@3.2.3",
   "engines": {
     "node": ">=18.18.0"
+  },
+  "dependencies": {
+    "@splinetool/react-spline": "^4.0.0",
+    "@splinetool/runtime": "^1.9.82"
   }
 }
