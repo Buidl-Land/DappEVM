@@ -1,0 +1,281 @@
+[
+  {
+    "type": "function",
+    "name": "createProject",
+    "inputs": [
+      { "name": "title", "type": "string", "internalType": "string" },
+      { "name": "description", "type": "string", "internalType": "string" },
+      { "name": "tags", "type": "string[]", "internalType": "string[]" },
+      {
+        "name": "metadata",
+        "type": "tuple",
+        "internalType": "struct ProjectFacet.ProjectMetadata",
+        "components": [
+          {
+            "name": "aiEvaluation",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "marketScore",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "techFeasibility",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "minValuation",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "maxValuation",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      }
+    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getProject",
+    "inputs": [
+      { "name": "projectId", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [
+      { "name": "id", "type": "uint256", "internalType": "uint256" },
+      { "name": "creator", "type": "address", "internalType": "address" },
+      { "name": "title", "type": "string", "internalType": "string" },
+      { "name": "description", "type": "string", "internalType": "string" },
+      { "name": "tags", "type": "string[]", "internalType": "string[]" },
+      {
+        "name": "metadata",
+        "type": "tuple",
+        "internalType": "struct ProjectFacet.ProjectMetadata",
+        "components": [
+          {
+            "name": "aiEvaluation",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "marketScore",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "techFeasibility",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "minValuation",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "maxValuation",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "status",
+        "type": "uint8",
+        "internalType": "enum ProjectFacet.ProjectStatus"
+      },
+      { "name": "createdAt", "type": "uint256", "internalType": "uint256" },
+      { "name": "updatedAt", "type": "uint256", "internalType": "uint256" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getProjectCount",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getUserProjects",
+    "inputs": [
+      { "name": "user", "type": "address", "internalType": "address" }
+    ],
+    "outputs": [
+      { "name": "", "type": "uint256[]", "internalType": "uint256[]" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isProjectOwner",
+    "inputs": [
+      { "name": "projectId", "type": "uint256", "internalType": "uint256" },
+      { "name": "account", "type": "address", "internalType": "address" }
+    ],
+    "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "updateProject",
+    "inputs": [
+      { "name": "projectId", "type": "uint256", "internalType": "uint256" },
+      { "name": "title", "type": "string", "internalType": "string" },
+      { "name": "description", "type": "string", "internalType": "string" },
+      { "name": "tags", "type": "string[]", "internalType": "string[]" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "updateProjectMetadata",
+    "inputs": [
+      { "name": "projectId", "type": "uint256", "internalType": "uint256" },
+      {
+        "name": "metadata",
+        "type": "tuple",
+        "internalType": "struct ProjectFacet.ProjectMetadata",
+        "components": [
+          {
+            "name": "aiEvaluation",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "marketScore",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "techFeasibility",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "minValuation",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "maxValuation",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "updateProjectStatus",
+    "inputs": [
+      { "name": "projectId", "type": "uint256", "internalType": "uint256" },
+      {
+        "name": "newStatus",
+        "type": "uint8",
+        "internalType": "enum ProjectFacet.ProjectStatus"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "ProjectCreated",
+    "inputs": [
+      {
+        "name": "projectId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "creator",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
+      },
+      {
+        "name": "timestamp",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "ProjectStatusChanged",
+    "inputs": [
+      {
+        "name": "projectId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "oldStatus",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "enum ProjectFacet.ProjectStatus"
+      },
+      {
+        "name": "newStatus",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "enum ProjectFacet.ProjectStatus"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "ProjectUpdated",
+    "inputs": [
+      {
+        "name": "projectId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
+      },
+      {
+        "name": "status",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "enum ProjectFacet.ProjectStatus"
+      },
+      {
+        "name": "timestamp",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  }
+]

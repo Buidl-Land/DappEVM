@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2016", // Match other packages if possible
+    "module": "CommonJS",
+    "lib": ["ESNext"],
+    "outDir": "./dist", // Optional build output dir
+    // "rootDir": ".", // Removed rootDir to potentially fix module resolution issues
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "baseUrl": ".", // Helps with resolving paths
+    "paths": {
+        // Map workspace dependencies if needed, though Yarn workspaces should handle this
+        "@virtuals-protocol/game": ["../src"],
+        "@buidlland/game-buidlland-plugin": ["../plugins/buidlLandPlugin/src"],
+        "@virtuals-protocol/game-twitter-plugin": ["../plugins/twitterPlugin/src"]
+    }
+  },
+  "include": ["./*.ts"], // Include only TS files in this directory
+  "exclude": ["node_modules", "dist"]
+}

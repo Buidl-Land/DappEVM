@@ -4,7 +4,11 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "packages/game-node",
+      "packages/game-node/plugins/buidlLandPlugin",
+      "packages/game-node/plugins/twitterPlugin",
+      "packages/game-node/app"
     ]
   },
   "scripts": {
@@ -38,6 +42,7 @@
     "next:lint": "yarn workspace @se-2/nextjs lint",
     "next:serve": "yarn workspace @se-2/nextjs serve",
     "precommit": "lint-staged",
+    "start:buidlland-agent": "yarn workspace @buidlland/agent-app start",
     "start": "yarn workspace @se-2/nextjs dev",
     "test": "cd packages/foundry && forge test -vvv",
     "vercel": "yarn workspace @se-2/nextjs vercel",

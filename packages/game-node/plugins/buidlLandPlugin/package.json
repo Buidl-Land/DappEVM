@@ -1,0 +1,26 @@
+{
+  "name": "@buidlland/game-buidlland-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix"
+  },
+  "dependencies": {
+    "@virtuals-protocol/game": "workspace:*",
+    "ethers": "^5.7.2",
+    "twitter-api-v2": "^1.15.0",
+    "viem": "~2.21.32"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "eslint": "^8.33.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
