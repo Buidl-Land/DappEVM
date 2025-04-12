@@ -5,8 +5,7 @@
 import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 
 const deployedContracts = {
-
-  10143: {
+  84532: {
     DiamondCutFacet: {
       address: "0x986323916eebef9b6d208f0464cbf0e0cc46708d",
       abi: [
@@ -94,7 +93,7 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {},
-      deploymentFile: "run-1741160622.json",
+      deploymentFile: "run-1744478586.json",
       deploymentScript: "Deploy.s.sol",
     },
     Diamond: {
@@ -187,7 +186,7 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {},
-      deploymentFile: "run-1741160622.json",
+      deploymentFile: "run-1744478586.json",
       deploymentScript: "Deploy.s.sol",
     },
     AccessControlFacet: {
@@ -466,7 +465,7 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {},
-      deploymentFile: "run-1741160622.json",
+      deploymentFile: "run-1744478586.json",
       deploymentScript: "Deploy.s.sol",
     },
     ProjectFacet: {
@@ -855,7 +854,7 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {},
-      deploymentFile: "run-1741160622.json",
+      deploymentFile: "run-1744478586.json",
       deploymentScript: "Deploy.s.sol",
     },
     CrowdfundingFacet: {
@@ -1135,7 +1134,7 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {},
-      deploymentFile: "run-1741160622.json",
+      deploymentFile: "run-1744478586.json",
       deploymentScript: "Deploy.s.sol",
     },
     ProjectTokenFacet: {
@@ -1356,7 +1355,7 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {},
-      deploymentFile: "run-1741160622.json",
+      deploymentFile: "run-1744478586.json",
       deploymentScript: "Deploy.s.sol",
     },
     TaskMarketFacet: {
@@ -1819,11 +1818,10 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {},
-      deploymentFile: "run-1741160622.json",
+      deploymentFile: "run-1744478586.json",
       deploymentScript: "Deploy.s.sol",
     },
-  },
-
+  }
 } as const;
 
 export default deployedContracts satisfies GenericContractsDeclaration;

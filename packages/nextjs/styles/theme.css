@@ -134,8 +134,13 @@
   transform: translateY(-2px);
 }
 
-.network-badge.monad {
-  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+.network-badge.base {
+  background-color: #0052ff;
+  color: white;
+}
+
+.network-badge.base-sepolia {
+  background-color: #0052ff;
   color: white;
 }
 
