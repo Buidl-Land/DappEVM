@@ -177,9 +177,11 @@ export const ContractProjectCard = ({ projectId = 2 }: { projectId?: number }) =
   }
 
   return (
-    <Link href={`/projects/${project.id}`} className="block w-full md:w-[48%] lg:w-[32%]">
-      <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 h-full hover:scale-[1.02]">
-        <div className="card-body p-4">
+    <Link href={`/projects/${project.id}`} className="block w-full md:w-[48%] lg:w-[32%] group">
+      <div className="relative card h-full">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl group-hover:opacity-70 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 backdrop-blur-xl bg-white/30 dark:bg-gray-900/30 rounded-2xl opacity-80 group-hover:opacity-90 transition-all duration-300 border border-white/20 dark:border-gray-800/20"></div>
+        <div className="relative card-body p-4 z-10">
           <div className="flex justify-between items-start mb-2">
             <h2 className="card-title text-base md:text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
               {project?.title || 'Untitled Project'}
@@ -211,65 +213,80 @@ export const ContractProjectCard = ({ projectId = 2 }: { projectId?: number }) =
           
           {/* Funding Progress */}
           {fundingInfo && (
-            <div className="bg-base-300 p-3 rounded-lg mb-2">
-              <div className="flex justify-between items-center mb-2">
-                <h3 className="font-medium text-sm text-primary">Funding Progress</h3>
-                <div className="flex items-center gap-1">
-                  <span className="text-xs font-medium text-base-content">{daysLeft} {daysLeft > 0 ? "days left" : "days ended"}</span>
-                  {isFundingClosed && (
-                    <span className="badge badge-success badge-xs">Completed</span>
+            <div className="relative overflow-hidden bg-white/40 dark:bg-gray-800/40 rounded-lg mb-2">
+              <div className="absolute inset-0 backdrop-blur-lg"></div>
+              <div className="relative p-3 z-10">
+                <div className="flex justify-between items-center mb-2">
+                  <h3 className="font-medium text-sm text-primary">Funding Progress</h3>
+                  <div className="flex items-center gap-1">
+                    <span className="text-xs font-medium text-base-content">{daysLeft} {daysLeft > 0 ? "days left" : "days ended"}</span>
+                    {isFundingClosed && (
+                      <span className="badge badge-success badge-xs">Completed</span>
+                    )}
+                  </div>
+                </div>
+                
+                <div className="w-full bg-base-200 rounded-full h-2 mb-2">
+                  <div 
+                    className="bg-primary h-2 rounded-full" 
+                    style={{ width: `${Math.min(100, fundingProgress)}%` }}
+                  ></div>
+                </div>
+                
+                <div className="flex justify-between text-xs font-medium text-base-content">
+                  <span>{formatAmount(fundingInfo.raisedAmount)} USDC</span>
+                  <span>Target: {formatAmount(fundingInfo.fundingGoal)} USDC</span>
+                </div>
+                
+                <div className="mt-1 text-xs font-bold text-primary">
+                  {fundingProgress >= 100 ? (
+                    <span className="text-success">Goal reached!</span>
+                  ) : (
+                    <span>{fundingProgress.toFixed(1)}%</span>
                   )}
                 </div>
-              </div>
-              
-              <div className="w-full bg-base-200 rounded-full h-2 mb-2">
-                <div 
-                  className="bg-primary h-2 rounded-full" 
-                  style={{ width: `${Math.min(100, fundingProgress)}%` }}
-                ></div>
-              </div>
-              
-              <div className="flex justify-between text-xs font-medium text-base-content">
-                <span>{formatAmount(fundingInfo.raisedAmount)} USDC</span>
-                <span>Target: {formatAmount(fundingInfo.fundingGoal)} USDC</span>
-              </div>
-              
-              <div className="mt-1 text-xs font-bold text-primary">
-                {fundingProgress >= 100 ? (
-                  <span className="text-success">Goal reached!</span>
-                ) : (
-                  <span>{fundingProgress.toFixed(1)}%</span>
-                )}
               </div>
             </div>
           )}
           
           {/* AI Evaluation */}
-          <div className="bg-base-300 p-3 rounded-lg mb-3">
-            <p className="text-sm font-medium mb-1 text-secondary">AI Evaluation</p>
-            <p className="text-xs text-base-content line-clamp-2">
-              {project?.metadata?.aiEvaluation || 'No evaluation available'}
-            </p>
+          <div className="relative overflow-hidden bg-white/40 dark:bg-gray-800/40 rounded-lg mb-3">
+            <div className="absolute inset-0 backdrop-blur-lg"></div>
+            <div className="relative p-3 z-10">
+              <p className="text-sm font-medium mb-1 text-secondary">AI Evaluation</p>
+              <p className="text-xs text-base-content line-clamp-2">
+                {project?.metadata?.aiEvaluation || 'No evaluation available'}
+              </p>
+            </div>
           </div>
           
           {/* Metrics */}
           <div className="grid grid-cols-3 gap-2 mb-2 text-center">
-            <div className="bg-primary/20 rounded p-2">
-              <div className="text-xs text-primary font-medium">Score</div>
-              <div className="font-bold text-sm text-base-content">
-                {project?.metadata?.marketScore ?? 0}/10
+            <div className="relative overflow-hidden bg-primary/30 rounded">
+              <div className="absolute inset-0 backdrop-blur-lg"></div>
+              <div className="relative p-2 z-10">
+                <div className="text-xs text-primary font-medium">Score</div>
+                <div className="font-bold text-sm text-base-content">
+                  {project?.metadata?.marketScore ?? 0}/10
+                </div>
               </div>
             </div>
-            <div className="bg-secondary/20 rounded p-2">
-              <div className="text-xs text-secondary font-medium">Tech</div>
-              <div className="font-bold text-sm text-base-content">
-                {project?.metadata?.techFeasibility || 'N/A'}
+            <div className="relative overflow-hidden bg-secondary/30 rounded">
+              <div className="absolute inset-0 backdrop-blur-lg"></div>
+              <div className="relative p-2 z-10">
+                <div className="text-xs text-secondary font-medium">Tech</div>
+                <div className="font-bold text-sm text-base-content">
+                  {project?.metadata?.techFeasibility || 'N/A'}
+                </div>
               </div>
             </div>
-            <div className="bg-accent/20 rounded p-2">
-              <div className="text-xs text-accent font-medium">Value</div>
-              <div className="font-bold text-sm text-base-content">
-                ${((project?.metadata?.maxValuation ?? 0) / 1000).toFixed(1)}K
+            <div className="relative overflow-hidden bg-accent/30 rounded">
+              <div className="absolute inset-0 backdrop-blur-lg"></div>
+              <div className="relative p-2 z-10">
+                <div className="text-xs text-accent font-medium">Value</div>
+                <div className="font-bold text-sm text-base-content">
+                  ${((project?.metadata?.maxValuation ?? 0) / 1000).toFixed(1)}K
+                </div>
               </div>
             </div>
           </div>

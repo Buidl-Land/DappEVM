@@ -387,7 +387,31 @@ export function TaskDetailsClient({ projectId, taskId }: { projectId: string; ta
   };
 
   return (
-    <div className="container mx-auto px-4 pt-24 pb-8 mt-4 sm:pt-28 sm:mt-6">
+    <div className="container mx-auto px-4 pt-24 pb-8 mt-4 sm:pt-28 sm:mt-6 animate-fade-in">
+      {/* SVG Background */}
+      <div className="fixed inset-0 z-[-1] opacity-5">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path
+                d="M0,0 L40,0 L40,40 L0,40 L0,0 Z M39,1 L1,1 L1,39 L39,39 L39,1 Z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+              />
+            </pattern>
+            <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+              <circle cx="10" cy="10" r="1.5" fill="currentColor" />
+            </pattern>
+            <mask id="gridMask">
+              <rect width="100%" height="100%" fill="url(#grid)" />
+            </mask>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#dots)" />
+          <rect width="100%" height="100%" fill="currentColor" mask="url(#gridMask)" opacity="0.2" />
+        </svg>
+      </div>
+
       {/* Breadcrumb navigation */}
       <div className="text-sm breadcrumbs mb-6">
         <ul>

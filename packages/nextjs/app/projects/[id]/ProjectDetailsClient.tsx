@@ -519,7 +519,31 @@ export function ProjectDetailsClient({ projectId }: { projectId: string }) {
   const createdTime = formatDistanceToNow(new Date(project.createdAt * 1000), { addSuffix: true });
 
   return (
-    <div className="container mx-auto px-4 pt-24 pb-8 mt-4 sm:pt-28 sm:mt-6">
+    <div className="container mx-auto px-4 pt-24 pb-8 mt-4 sm:pt-28 sm:mt-6 animate-fade-in">
+      {/* SVG Background */}
+      <div className="fixed inset-0 z-[-1] opacity-5">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path
+                d="M0,0 L40,0 L40,40 L0,40 L0,0 Z M39,1 L1,1 L1,39 L39,39 L39,1 Z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+              />
+            </pattern>
+            <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+              <circle cx="10" cy="10" r="1.5" fill="currentColor" />
+            </pattern>
+            <mask id="gridMask">
+              <rect width="100%" height="100%" fill="url(#grid)" />
+            </mask>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#dots)" />
+          <rect width="100%" height="100%" fill="currentColor" mask="url(#gridMask)" opacity="0.2" />
+        </svg>
+      </div>
+      
       {/* Project title and status */}
       <div className="p-6 mb-8 rounded-2xl shadow-lg bg-base-100 dark:bg-base-200 relative overflow-hidden border border-base-200 dark:border-base-300 before:absolute before:inset-0 before:p-[1px] before:rounded-2xl before:bg-gradient-to-r before:from-primary/40 before:via-secondary/40 before:to-accent/40 before:-z-10 after:absolute after:inset-0 after:rounded-2xl after:bg-gradient-to-b after:from-base-100 after:to-base-100 dark:after:from-base-200 dark:after:to-base-200 after:-z-10">
         {/* Add aurora effect */}
