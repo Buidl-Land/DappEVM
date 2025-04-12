@@ -96,7 +96,7 @@ export const createBuidlLandAgent = () => {
     goal: agentGoal,
     description: "Monitors Twitter for Web3 project ideas, evaluates them using LLM, and launches approved projects on the BuidlLand platform (Base Sepolia).",
     workers: [twitterWorker, buidlLandWorker],
-    llmModel: LLMModel.Llama_3_1_405B_Instruct, // Use large Llama model
+    llmModel: LLMModel.DeepSeek_R1,
 
     // Provide agent state including processed tweet IDs
     getAgentState: async () => {
