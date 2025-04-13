@@ -47,7 +47,7 @@ const AboutPage = () => {
         <div className="text-center mb-16 animate-fadeIn">
           <div className="inline-block p-2 px-4 mb-4 bg-primary/10 rounded-full backdrop-blur-sm">
             <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
-              🚀 IdeaPulse
+              🚀 BuidlLand
             </h1>
           </div>
           <p className="text-xl italic mb-6 text-base-content/80 dark:text-gray-300">
