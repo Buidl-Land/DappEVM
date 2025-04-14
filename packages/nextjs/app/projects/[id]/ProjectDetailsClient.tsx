@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { formatDistanceToNow, differenceInDays } from "date-fns";
 import { useContractRead, useContractWrite } from "~~/hooks/contracts";
 import { notification } from "~~/utils/scaffold-eth";
 import { useAccount } from "wagmi";
+import { useRouter } from "next/navigation";
 
 // Define project data type
 type ProjectData = {
@@ -85,10 +86,15 @@ const parseFundingInfo = (data: any[]): FundingInfo => {
   };
 };
 
-// Format amount, convert wei to ETH
+// Format amount, convert wei to USDC and format
 const formatAmount = (amount: bigint): string => {
   const ethAmount = Number(amount) / 1e18;
   return ethAmount.toLocaleString(undefined, { maximumFractionDigits: 2 });
+};
+
+// Format task reward amount (no conversion needed)
+const formatTaskAmount = (amount: bigint): string => {
+  return Number(amount).toLocaleString(undefined, { maximumFractionDigits: 2 });
 };
 
 // Convert ETH to wei
@@ -125,6 +131,7 @@ const taskStatusMap: Record<number, { label: string; color: string }> = {
 type TabType = "details" | "roadmap" | "tasks";
 
 export function ProjectDetailsClient({ projectId }: { projectId: string }) {
+  const router = useRouter();
   const numericProjectId = parseInt(projectId);
   const { readMethod, isLoading } = useContractRead();
   const { writeMethod } = useContractWrite();
@@ -132,7 +139,14 @@ export function ProjectDetailsClient({ projectId }: { projectId: string }) {
   const [project, setProject] = useState<ProjectData | null>(() => projectCache[projectId] || null);
   const [fundingInfo, setFundingInfo] = useState<FundingInfo | null>(() => fundingCache[projectId] || null);
   const [taskCount, setTaskCount] = useState<number | null>(() => taskCountCache[projectId] || null);
-  const [activeTab, setActiveTab] = useState<TabType>("details");
+  const [activeTab, setActiveTab] = useState<TabType>(() => {
+    if (typeof window !== 'undefined') {
+      const savedTab = window.localStorage.getItem('activeProjectTab');
+      window.localStorage.removeItem('activeProjectTab'); // Clear saved tab
+      return (savedTab as TabType) || "details";
+    }
+    return "details";
+  });
   const [isLoadingData, setIsLoadingData] = useState(true);
 
   // Contribution related state
@@ -160,6 +174,10 @@ export function ProjectDetailsClient({ projectId }: { projectId: string }) {
   } | null>(null);
   const [unlockedAmount, setUnlockedAmount] = useState<bigint>(0n);
   const [unlockPercentage, setUnlockPercentage] = useState<number>(0);
+
+  const handleTaskClick = useCallback((taskId: number) => {
+    router.push(`/projects/${projectId}/tasks/${taskId}`);
+  }, [router, projectId]);
 
   // Refresh funding info
   const refreshFundingInfo = async () => {
@@ -469,10 +487,10 @@ export function ProjectDetailsClient({ projectId }: { projectId: string }) {
 
   // Fetch tasks when active tab is "tasks"
   useEffect(() => {
-    if (activeTab === "tasks" && taskCount && projectTasks.length === 0 && !isLoadingTasks) {
+    if (activeTab === "tasks" && taskCount && !isLoadingTasks) {
       fetchProjectTasks();
     }
-  }, [activeTab, taskCount, projectTasks.length, isLoadingTasks]);
+  }, [activeTab, taskCount, isLoadingTasks, fetchProjectTasks]);
 
   // Fetch claim data when funding info is available
   useEffect(() => {
@@ -567,7 +585,7 @@ export function ProjectDetailsClient({ projectId }: { projectId: string }) {
                 <span>Created {createdTime}</span>
                 <span className="hidden md:inline">•</span>
                 <span className="flex items-center">
-                  Created by <span className="ml-1 px-2 py-0.5 text-xs font-medium text-primary border border-primary rounded-md hover:bg-primary/10 dark:hover:bg-primary/20">agent@IdeaPlusesAI</span>
+                  Created by <span className="ml-1 px-2 py-0.5 text-xs font-medium text-primary border border-primary rounded-md hover:bg-primary/10 dark:hover:bg-primary/20">agent@upmyidea</span>
                 </span>
               </p>
             </div>
@@ -809,7 +827,6 @@ export function ProjectDetailsClient({ projectId }: { projectId: string }) {
                     {projectTasks.map(task => {
                       const statusStyle = taskStatusMap[task.status]?.color || "bg-base-200 text-base-content";
                       const statusLabel = taskStatusMap[task.status]?.label || "Unknown";
-
                       return (
                         <div key={task.id} className="p-4 rounded-lg bg-base-200/50 hover:bg-base-200/70 dark:bg-base-300/30 dark:hover:bg-base-300/40 border border-base-300/50 dark:border-base-300/20 transition-all">
                           <div className="flex justify-between items-start">
@@ -832,15 +849,15 @@ export function ProjectDetailsClient({ projectId }: { projectId: string }) {
                           <div className="flex justify-between items-center mt-4">
                             <div className="flex items-center">
                               <span className="material-icons text-primary text-sm mr-1">payments</span>
-                              <span className="text-sm font-medium">{formatAmount(task.reward)} USDC</span>
+                              <span className="text-sm font-medium">{formatTaskAmount(task.reward)} USDC</span>
                             </div>
-                            <a
-                              href={`/projects/${projectId}/tasks/${task.id}`}
+                            <button
+                              onClick={() => handleTaskClick(task.id)}
                               className="btn btn-primary btn-sm sm:btn-md h-10 min-h-10"
                             >
                               <span className="material-icons text-xs mr-1">visibility</span>
                               View Details
-                            </a>
+                            </button>
                           </div>
                         </div>
                       );

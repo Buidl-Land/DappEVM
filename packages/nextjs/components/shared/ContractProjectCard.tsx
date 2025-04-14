@@ -198,7 +198,7 @@ export const ContractProjectCard = ({ projectId = 2 }: { projectId?: number }) =
             </div>
           </div>
           
-          <div className="flex flex-wrap gap-1 mb-2">
+          <div className="h-[55px] flex flex-wrap gap-1 mb-2 overflow-hidden">
             {Array.isArray(project?.tags) ? project.tags.map((tag, index) => (
               <span key={index} className="badge badge-sm bg-primary/10 text-primary hover:bg-primary/20 transition-colors border-0">
                 {tag}

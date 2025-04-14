@@ -14,8 +14,8 @@ export default function Home() {
       
       {/* Top Navigation */}
       <div className="absolute top-0 left-0 w-full p-4 flex justify-between z-10">
-        {/* 左上角文字已移除 */}
-        {/* 右上角按钮已移除 */}
+        {/* Top left text removed */}
+        {/* Top right button removed */}
       </div>
       
       {/* Center Content */}

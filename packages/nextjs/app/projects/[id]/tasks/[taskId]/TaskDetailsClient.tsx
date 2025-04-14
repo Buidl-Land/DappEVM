@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { formatDistanceToNow, differenceInDays } from "date-fns";
 import { useAccount } from "wagmi";
 import { useContractRead, useContractWrite } from "~~/hooks/contracts";
@@ -28,9 +29,7 @@ type ProjectData = {
   creator: string;
 };
 
-// Create a simple cache object
-const taskCache: Record<string, TaskData> = {};
-const projectCache: Record<string, ProjectData> = {};
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 // Parse task data from contract response
 const parseTaskData = (data: any[]): TaskData => {
@@ -50,8 +49,7 @@ const parseTaskData = (data: any[]): TaskData => {
 
 // Format token amount (convert from wei to tokens)
 const formatTokenAmount = (amount: bigint): string => {
-  const tokenAmount = Number(amount) / 1e18;
-  return tokenAmount.toLocaleString(undefined, { maximumFractionDigits: 2 });
+  return Number(amount).toLocaleString(undefined, { maximumFractionDigits: 2 });
 };
 
 // Task status mapping
@@ -65,183 +63,90 @@ const statusMap: Record<number, { label: string; color: string }> = {
 };
 
 export function TaskDetailsClient({ projectId, taskId }: { projectId: string; taskId: string }) {
+  const router = useRouter();
+  const queryClient = useQueryClient();
   const numericProjectId = parseInt(projectId);
   const numericTaskId = parseInt(taskId);
-  const { readMethod, isLoading } = useContractRead();
+  const { readMethod, isLoading: contractLoading } = useContractRead();
   const { writeMethod } = useContractWrite();
   const { address: connectedAddress } = useAccount();
-  const [task, setTask] = useState<TaskData | null>(() => taskCache[`${projectId}-${taskId}`] || null);
-  const [project, setProject] = useState<ProjectData | null>(() => projectCache[projectId] || null);
-  const [isLoadingData, setIsLoadingData] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Refresh task data
-  const refreshTaskData = async () => {
-    try {
+  // Use React Query to fetch task data
+  const { data: task, isLoading: taskLoading } = useQuery({
+    queryKey: ["task", projectId, taskId],
+    queryFn: async () => {
       const taskResult = await readMethod("getTask", [numericProjectId, numericTaskId]);
-      
-      if (taskResult) {
-        const parsedTask = parseTaskData(taskResult as any[]);
-        
-        // Update cache
-        taskCache[`${projectId}-${taskId}`] = parsedTask;
-        
-        setTask(parsedTask);
-      }
-    } catch (err) {
-      console.error("Failed to fetch task data:", err);
-    }
-  };
+      return taskResult ? parseTaskData(taskResult as any[]) : null;
+    },
+    enabled: !contractLoading
+  });
 
-  // Handle task application
-  const handleApplyForTask = async () => {
+  // Use React Query to fetch project data
+  const { data: project, isLoading: projectLoading } = useQuery({
+    queryKey: ["project", projectId],
+    queryFn: async () => {
+      const projectResult = await readMethod("getProject", [numericProjectId]);
+      if (!projectResult) return null;
+      return {
+        id: Number(projectResult[0]),
+        title: projectResult[2],
+        creator: projectResult[1],
+      };
+    },
+    enabled: !contractLoading
+  });
+
+  // Optimize the refreshData function
+  const refreshData = useCallback(() => {
+    queryClient.invalidateQueries({ queryKey: ["task", projectId, taskId] });
+  }, [queryClient, projectId, taskId]);
+
+  // Handle task actions
+  const handleTaskAction = useCallback(async (
+    action: "applyForTask" | "startTask" | "completeTask",
+    actionName: string
+  ) => {
     try {
       setIsSubmitting(true);
+      const notificationId = notification.loading(`${actionName}...`);
       
-      // Show loading notification
-      const notificationId = notification.loading("Processing your application...");
-      
-      // Call contract method with projectId and taskId, as per updated ABI definition
-      const result = await writeMethod("applyForTask", [numericProjectId, numericTaskId], {
+      await writeMethod(action, [numericProjectId, numericTaskId], {
         onSuccess: (txHash) => {
-          // Remove loading notification
           notification.remove(notificationId);
-          
-          // Show success notification
           notification.success(
             <div>
-              <p>Application submitted successfully!</p>
+              <p>{actionName} successful!</p>
               <p className="text-xs mt-1">Transaction hash: {txHash.slice(0, 10)}...{txHash.slice(-8)}</p>
             </div>,
             { duration: 5000 }
           );
-          
-          // Refresh task data
-          setTimeout(() => {
-            refreshTaskData();
-          }, 2000);
+          setTimeout(refreshData, 2000);
         },
         onError: (error) => {
-          // Remove loading notification
           notification.remove(notificationId);
-          
-          // Show error notification
           notification.error(
             <div>
-              <p>Failed to apply for task</p>
+              <p>{actionName} failed</p>
               <p className="text-xs mt-1">{error.message}</p>
             </div>
           );
         }
       });
-      
     } catch (error: any) {
-      console.error("Error applying for task:", error);
-      notification.error("Failed to apply for task: " + error.message);
+      console.error(`Error ${action}:`, error);
+      notification.error(`${actionName} failed: ` + error.message);
     } finally {
       setIsSubmitting(false);
     }
-  };
+  }, [writeMethod, numericProjectId, numericTaskId, refreshData]);
 
-  // Handle starting a task
-  const handleStartTask = async () => {
-    try {
-      setIsSubmitting(true);
-      
-      // Show loading notification
-      const notificationId = notification.loading("Starting task...");
-      
-      // Call contract method with projectId and taskId
-      const result = await writeMethod("startTask", [numericProjectId, numericTaskId], {
-        onSuccess: (txHash) => {
-          // Remove loading notification
-          notification.remove(notificationId);
-          
-          // Show success notification
-          notification.success(
-            <div>
-              <p>Task started successfully!</p>
-              <p className="text-xs mt-1">Transaction hash: {txHash.slice(0, 10)}...{txHash.slice(-8)}</p>
-            </div>,
-            { duration: 5000 }
-          );
-          
-          // Refresh task data
-          setTimeout(() => {
-            refreshTaskData();
-          }, 2000);
-        },
-        onError: (error) => {
-          // Remove loading notification
-          notification.remove(notificationId);
-          
-          // Show error notification
-          notification.error(
-            <div>
-              <p>Failed to start task</p>
-              <p className="text-xs mt-1">{error.message}</p>
-            </div>
-          );
-        }
-      });
-      
-    } catch (error: any) {
-      console.error("Error starting task:", error);
-      notification.error("Failed to start task: " + error.message);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  // Simplified operation handling functions
+  const handleApplyForTask = useCallback(() => handleTaskAction("applyForTask", "Apply for Task"), [handleTaskAction]);
+  const handleStartTask = useCallback(() => handleTaskAction("startTask", "Start Task"), [handleTaskAction]);
+  const handleCompleteTask = useCallback(() => handleTaskAction("completeTask", "Complete Task"), [handleTaskAction]);
 
-  // Handle completing a task
-  const handleCompleteTask = async () => {
-    try {
-      setIsSubmitting(true);
-      
-      // Show loading notification
-      const notificationId = notification.loading("Completing task...");
-      
-      // Call contract method with projectId and taskId
-      const result = await writeMethod("completeTask", [numericProjectId, numericTaskId], {
-        onSuccess: (txHash) => {
-          // Remove loading notification
-          notification.remove(notificationId);
-          
-          // Show success notification
-          notification.success(
-            <div>
-              <p>Task completed successfully!</p>
-              <p className="text-xs mt-1">Transaction hash: {txHash.slice(0, 10)}...{txHash.slice(-8)}</p>
-            </div>,
-            { duration: 5000 }
-          );
-          
-          // Refresh task data
-          setTimeout(() => {
-            refreshTaskData();
-          }, 2000);
-        },
-        onError: (error) => {
-          // Remove loading notification
-          notification.remove(notificationId);
-          
-          // Show error notification
-          notification.error(
-            <div>
-              <p>Failed to complete task</p>
-              <p className="text-xs mt-1">{error.message}</p>
-            </div>
-          );
-        }
-      });
-      
-    } catch (error: any) {
-      console.error("Error completing task:", error);
-      notification.error("Failed to complete task: " + error.message);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  const isLoading = contractLoading || taskLoading || projectLoading;
 
   // Helper function to get task status message
   const getTaskStatusMessage = (task: TaskData, connectedWallet?: string): string => {
@@ -271,63 +176,7 @@ export function TaskDetailsClient({ projectId, taskId }: { projectId: string; ta
     return `${address.substring(0, 6)}...${address.substring(address.length - 4)}`;
   };
 
-  useEffect(() => {
-    // If we already have cached data, use it
-    if (taskCache[`${projectId}-${taskId}`]) {
-      setTask(taskCache[`${projectId}-${taskId}`]);
-    }
-
-    if (projectCache[projectId]) {
-      setProject(projectCache[projectId]);
-    }
-
-    const fetchData = async () => {
-      setIsLoadingData(true);
-      try {
-        // Fetch task data
-        if (!task) {
-          const taskResult = await readMethod("getTask", [numericProjectId, numericTaskId]);
-          
-          if (taskResult) {
-            const parsedTask = parseTaskData(taskResult as any[]);
-            
-            // Update cache
-            taskCache[`${projectId}-${taskId}`] = parsedTask;
-            
-            setTask(parsedTask);
-          }
-        }
-
-        // Fetch project data for context
-        if (!project) {
-          const projectResult = await readMethod("getProject", [numericProjectId]);
-          
-          if (projectResult) {
-            const projectData = {
-              id: Number(projectResult[0]),
-              title: projectResult[2],
-              creator: projectResult[1],
-            };
-            
-            // Update cache
-            projectCache[projectId] = projectData;
-            
-            setProject(projectData);
-          }
-        }
-      } catch (err) {
-        console.error("Failed to fetch data:", err);
-      } finally {
-        setIsLoadingData(false);
-      }
-    };
-
-    if (!isLoading) {
-      fetchData();
-    }
-  }, [readMethod, projectId, taskId, numericProjectId, numericTaskId, isLoading, task, project]);
-
-  if (isLoading || isLoadingData || !task) {
+  if (isLoading || !task || !project) {
     return (
       <div className="container mx-auto px-4 py-8 animate-pulse">
         <div className="h-10 bg-gray-200 rounded w-1/3 mb-6"></div>
@@ -421,7 +270,7 @@ export function TaskDetailsClient({ projectId, taskId }: { projectId: string; ta
             </Link>
           </li>
           <li>
-            <Link href={`/projects/${projectId}`} className="text-primary">
+            <Link href={`/projects/${projectId}`} className="text-primary" onClick={() => window.localStorage.setItem('activeProjectTab', 'tasks')}>
               {project?.title || `Project ${projectId}`}
             </Link>
           </li>
@@ -664,7 +513,7 @@ export function TaskDetailsClient({ projectId, taskId }: { projectId: string; ta
                     <span className="px-2 py-0.5 text-xs font-medium text-primary border border-primary rounded-md">
                       {project.creator.substring(0, 6)}...{project.creator.substring(project.creator.length - 4)}
                     </span>
-                    <span className="ml-2 text-xs opacity-70">agent@IdeaPlusesAI</span>
+                    <span className="ml-2 text-xs opacity-70">agent@upmyidea</span>
                   </p>
                 </div>
                 

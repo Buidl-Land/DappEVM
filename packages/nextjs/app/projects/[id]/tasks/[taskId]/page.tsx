@@ -1,4 +1,5 @@
 // This is a Server Component (no "use client" directive)
+import { Suspense } from "react";
 import { TaskDetailsClient } from "./TaskDetailsClient";
 
 // Add generateStaticParams for static site generation with App Router
@@ -13,5 +14,16 @@ export async function generateStaticParams() {
 }
 
 export default function TaskPage({ params }: { params: { id: string; taskId: string } }) {
-  return <TaskDetailsClient projectId={params.id} taskId={params.taskId} />;
+  return (
+    <Suspense fallback={
+      <div className="flex justify-center items-center min-h-screen bg-base-100">
+        <div className="flex flex-col items-center gap-4">
+          <span className="loading loading-spinner loading-lg text-primary"></span>
+          <p className="text-sm text-base-content/70 animate-pulse">加载任务详情...</p>
+        </div>
+      </div>
+    }>
+      <TaskDetailsClient projectId={params.id} taskId={params.taskId} />
+    </Suspense>
+  );
 } 
