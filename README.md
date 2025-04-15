@@ -99,7 +99,42 @@ Buidl Land represents a fundamental breakthrough in Web3 project initiation, dev
   - AI-enhanced project management efficiency
   - Dynamic staking to prevent development stagnation
 
-## 5. Development Roadmap
+## 5. Project Directory Structure
+
+Buidl Land follows a monorepo structure with three main packages:
+
+```
+packages/
+├── nextjs/               # Frontend Application
+│   ├── app/              # Next.js application routes
+│   ├── components/       # React components
+│   ├── contracts/        # Contract ABIs and configs
+│   ├── hooks/            # Custom React hooks
+│   ├── services/         # API services
+│   └── styles/           # Global styles and themes
+│
+├── foundry/              # Smart Contracts
+│   ├── contracts/        # Smart contract source code
+│   │   ├── core/        # Core contract implementations
+│   │   ├── facets/      # Diamond facets
+│   │   └── libraries/   # Shared libraries
+│   ├── script/          # Deployment scripts
+│   └── test/            # Contract test suites
+│
+└── game-node/           # Game Framework
+    ├── app/             # Game application core
+    ├── plugins/         # Game plugins
+    ├── src/             # Source code
+    └── tools/           # Development tools
+```
+
+### Key Components
+
+- **Frontend (packages/nextjs)**: Next.js-based web application with React, providing the user interface for interacting with the platform.
+- **Smart Contracts (packages/foundry)**: Solidity smart contracts built with Foundry, implementing the core business logic and governance mechanisms.
+- **Game Framework (packages/game-node)**: Custom game engine that powers the interactive elements and gamification features of the platform.
+
+## 6. Development Roadmap
 
 ### Buidl Land Optimized Development Roadmap
 
