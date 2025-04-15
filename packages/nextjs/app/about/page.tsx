@@ -47,11 +47,11 @@ const AboutPage = () => {
         <div className="text-center mb-16 animate-fadeIn">
           <div className="inline-block p-2 px-4 mb-4 bg-primary/10 rounded-full backdrop-blur-sm">
             <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
-              🚀 BuidlLand
+              🚀 Buidl Land
             </h1>
           </div>
           <p className="text-xl italic mb-6 text-base-content/80 dark:text-gray-300">
-            Build with AI, Grow with Community, Tokenize with DAO
+            A Utopia Co-created by Humans and AI!
           </p>
           <div className="h-1 w-24 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto"></div>
         </div>
@@ -60,8 +60,7 @@ const AboutPage = () => {
         <div className="prose prose-lg dark:prose-invert mx-auto max-w-4xl">
           <div className="bg-white/80 dark:bg-gray-800/80 rounded-xl shadow-xl p-8 mb-12 transform transition-all hover:shadow-2xl backdrop-blur-sm">
             <p className="text-lg leading-relaxed">
-              A Web3 innovation incubation platform based on pre-issuance token crowdfunding and community DAO governance, 
-              enabling AI and token holders to jointly support project idea incubation, development, and implementation.
+              We are not just building a platform; we are igniting a revolution! Buidl Land will become a digital city-state brimming with passion and creativity, where human ingenuity and AI merge in unprecedented ways to jointly nurture and build truly valuable, meaningful, and world-changing Web3 projects and communities!
             </p>
           </div>
 
@@ -75,82 +74,69 @@ const AboutPage = () => {
             <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-8 backdrop-blur-sm">
               <h3 className="text-2xl font-semibold mb-4 text-base-content">Vision and Core Values</h3>
               <p className="mb-4">
-                IdeaPulse is committed to breaking the centralized monopoly of traditional VCs, exploring new paths for innovative 
-                projects through community-driven, fully transparent processes. We&apos;re building a &quot;Product Hunt+DAO&quot; model where:
+                Farewell to cold capital games, embrace the fiery era of co-creation! Forget the old models dominated by a few VCs, lacking soul! In Buidl Land, we firmly believe:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md hover:shadow-lg transition-all backdrop-blur-sm">
                   <h4 className="font-bold mb-2 flex items-center">
                     <span className="material-icons text-primary mr-2">people</span>
-                    Co-creating an Equal Community
+                    Every Brilliant Idea Deserves to be Seen
                   </h4>
-                  <p className="text-sm">Anyone can participate equally in project building, with trusted AI Agents distributing rewards based on contributions</p>
+                  <p className="text-sm">No matter who you are, if you have a world-changing idea, this is your stage. AI will help you turn your ideas into reality.</p>
                 </div>
                 <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md hover:shadow-lg transition-all backdrop-blur-sm">
                   <h4 className="font-bold mb-2 flex items-center">
                     <span className="material-icons text-primary mr-2">account_balance</span>
-                    Blockchain Ecosystem Support
+                    Every Effective Contribution Must be Respected
                   </h4>
-                  <p className="text-sm">Projects in different blockchain ecosystems increase transaction volume and bring innovation</p>
+                  <p className="text-sm">We will use the fairest, most transparent mechanisms (objectively assessed by AI) to ensure your talent and effort receive the substantial rewards they deserve.</p>
                 </div>
                 <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md hover:shadow-lg transition-all backdrop-blur-sm">
                   <h4 className="font-bold mb-2 flex items-center">
                     <span className="material-icons text-primary mr-2">smart_toy</span>
-                    Customized Agent Services
+                    AI is a Partner Fighting Side-by-Side
                   </h4>
-                  <p className="text-sm">Different AI Agents for each public chain provide tailored solutions</p>
+                  <p className="text-sm">AI will deeply empower every stage of a project – from ideation, incubation, development, collaboration, to even community governance.</p>
                 </div>
                 <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md hover:shadow-lg transition-all backdrop-blur-sm">
                   <h4 className="font-bold mb-2 flex items-center">
                     <span className="material-icons text-primary mr-2">workspace_premium</span>
-                    Work Paradigm Innovation
+                    Community-Driven Innovation
                   </h4>
-                  <p className="text-sm">A revolutionary DAO allowing participants to maximize value in projects they&apos;re passionate about</p>
+                  <p className="text-sm">Power truly returns to the community, guided by collective wisdom, completely breaking free from centralized VC control.</p>
                 </div>
               </div>
 
-              <h3 className="text-2xl font-semibold mb-4 text-base-content">Core Project Objectives</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-base-content">Core Mission</h3>
               <div className="space-y-3">
                 <div className="flex items-start">
                   <span className="material-icons text-secondary mr-3 mt-1">check_circle</span>
                   <div>
-                    <strong>Social Creative Entry Point</strong>: Submit ideas by @AI Agent (Farcaster/Twitter), with AI generating structured proposals
+                    <strong>Unleash Creative Power</strong>: Build a zero-barrier, high-efficiency idea submission and incubation engine. Submit ideas simply by @ mentioning an AI Agent on social media.
                   </div>
                 </div>
                 <div className="flex items-start">
                   <span className="material-icons text-secondary mr-3 mt-1">check_circle</span>
                   <div>
-                    <strong>Dynamic Staking Crowdfunding</strong>: Stake project tokens to join development, unlock stakes after task completion
+                    <strong>Reshape the Collaboration Paradigm</strong>: Establish a trustless, contribution-first collaboration network through dynamic staking and AI audits.
                   </div>
                 </div>
                 <div className="flex items-start">
                   <span className="material-icons text-secondary mr-3 mt-1">check_circle</span>
                   <div>
-                    <strong>Project Token Economic Design</strong>: AI Agent reserves 15-30% of tokens for ecosystem building
+                    <strong>Define Value Distribution</strong>: Design a fair, just, and incentive-driven tokenomics system with real governance rights.
                   </div>
                 </div>
                 <div className="flex items-start">
                   <span className="material-icons text-secondary mr-3 mt-1">check_circle</span>
                   <div>
-                    <strong>Pre-issuance Token Crowdfunding</strong>: Fund projects at the no-product stage through AI-generated prototypes
+                    <strong>Empower Community Autonomy</strong>: Construct an AI-enhanced, community-led governance framework.
                   </div>
                 </div>
                 <div className="flex items-start">
                   <span className="material-icons text-secondary mr-3 mt-1">check_circle</span>
                   <div>
-                    <strong>AI+Community Co-governance</strong>: Token holders and AI Agents jointly participate in voting decisions
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <span className="material-icons text-secondary mr-3 mt-1">check_circle</span>
-                  <div>
-                    <strong>Anti-VC Centralization Design</strong>: Ensuring open and transparent decision-making processes
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <span className="material-icons text-secondary mr-3 mt-1">check_circle</span>
-                  <div>
-                    <strong>SocialFi Integration</strong>: Building a vibrant community through social media channels
+                    <strong>Integrate Social Power</strong>: Leverage Web3 social to ignite community passion and amplify influence.
                   </div>
                 </div>
               </div>
@@ -168,69 +154,48 @@ const AboutPage = () => {
               <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm">
                 <div className="flex items-center mb-3">
                   <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-3">1</div>
-                  <h3 className="text-xl font-bold text-base-content">Preventing Post-Token Issuance Stagnation</h3>
+                  <h3 className="text-xl font-bold text-base-content">Web3 Bubble & Trust Crisis</h3>
                 </div>
                 <ul className="list-disc pl-6 space-y-2 text-sm">
-                  <li>Dynamic staking mechanism ensures continuous development</li>
-                  <li>Pre-issuance token crowdfunding with clear fund usage</li>
-                  <li>AI+Community co-governance maintains development momentum</li>
+                  <li>Dynamic staking mechanism ensures long-term responsibility</li>
+                  <li>AI+DAO co-governance eliminates rug pull risks</li>
+                  <li>Transparent on-chain fund management</li>
                 </ul>
               </div>
               
               <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm">
                 <div className="flex items-center mb-3">
                   <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-3">2</div>
-                  <h3 className="text-xl font-bold text-base-content">Increasing Participation Opportunities</h3>
+                  <h3 className="text-xl font-bold text-base-content">Innovation Monopolization</h3>
                 </div>
                 <ul className="list-disc pl-6 space-y-2 text-sm">
-                  <li>Low barrier idea submission through AI agents</li>
-                  <li>Task staking mechanism for deep community involvement</li>
-                  <li>Economic incentives for active governance participants</li>
+                  <li>Zero-barrier socialized idea entry</li>
+                  <li>AI-assisted merit-based evaluation</li>
+                  <li>Permissionless task contribution system</li>
                 </ul>
               </div>
               
               <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm">
                 <div className="flex items-center mb-3">
                   <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-3">3</div>
-                  <h3 className="text-xl font-bold text-base-content">Empowering Communities Through Tokens</h3>
+                  <h3 className="text-xl font-bold text-base-content">Token Utility Issues</h3>
                 </div>
                 <ul className="list-disc pl-6 space-y-2 text-sm">
-                  <li>Multi-level token ecosystem with governance rights</li>
-                  <li>Token reservation for long-term ecosystem building</li>
-                  <li>SocialFi integration enhancing community engagement</li>
+                  <li>Strong utility, multi-layered tokenomics</li>
+                  <li>Real governance and economic rights</li>
+                  <li>AI-supervised fair distribution</li>
                 </ul>
               </div>
               
               <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm">
                 <div className="flex items-center mb-3">
                   <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-3">4</div>
-                  <h3 className="text-xl font-bold text-base-content">Solving Centralization and Transparency Issues</h3>
+                  <h3 className="text-xl font-bold text-base-content">Inefficient Collaboration</h3>
                 </div>
                 <ul className="list-disc pl-6 space-y-2 text-sm">
-                  <li>Open fund allocation and governance processes</li>
-                  <li>AI-assisted decision-making enhancing decentralization</li>
-                </ul>
-              </div>
-              
-              <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm">
-                <div className="flex items-center mb-3">
-                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-3">5</div>
-                  <h3 className="text-xl font-bold text-base-content">Lowering Entry Barriers for New Projects</h3>
-                </div>
-                <ul className="list-disc pl-6 space-y-2 text-sm">
-                  <li>Support for projects at the idea stage</li>
-                  <li>Token staking system for development funding</li>
-                </ul>
-              </div>
-              
-              <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm">
-                <div className="flex items-center mb-3">
-                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-3">6</div>
-                  <h3 className="text-xl font-bold text-base-content">Improving Project Management Efficiency</h3>
-                </div>
-                <ul className="list-disc pl-6 space-y-2 text-sm">
-                  <li>AI for idea generation, proposal structuring, and task auditing</li>
-                  <li>Automated qualification verification and milestone tracking</li>
+                  <li>Trustless collaboration foundation</li>
+                  <li>AI-empowered project management</li>
+                  <li>Automated human-AI synergy</li>
                 </ul>
               </div>
             </div>
@@ -247,14 +212,133 @@ const AboutPage = () => {
               <div className="flex justify-center">
                 <Image 
                   src={resolvedTheme === 'dark' 
-                    ? "https://www.mermaidchart.com/raw/937f4abc-fd01-4ca4-9bbc-e1d9ae619597?theme=dark&version=v0.1&format=svg"
-                    : "https://www.mermaidchart.com/raw/fa1e92a8-4188-4d36-a8a3-fb42acf5345d?theme=light&version=v0.1&format=svg"
+                    ? "https://www.mermaidchart.com/raw/4093c944-d4d2-498f-9ec3-6accea17cd2b?theme=dark&version=v0.1&format=svg"
+                    : "https://www.mermaidchart.com/raw/e53ac5f9-bc97-40f9-b764-b0253184266b?theme=light&version=v0.1&format=svg"
                   }
                   alt="Project Workflow Diagram" 
                   width={1200}
                   height={800}
                   className="w-full max-w-4xl rounded-lg shadow-md hover:shadow-lg transition-all"
                 />
+              </div>
+
+              <div className="mt-8 space-y-6">
+                <h3 className="text-2xl font-semibold mb-4">Core Features of the Flowchart</h3>
+                
+                <div className="space-y-4">
+                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                    <h4 className="font-bold mb-2 flex items-center">
+                      <span className="material-icons text-primary mr-2">lightbulb</span>
+                      Diverse Idea Sources
+                    </h4>
+                    <p className="text-sm">Users can quickly submit ideas via @ Agent or engage in deep brainstorming with the Agent and publish more mature ideas via MCP.</p>
+                  </div>
+
+                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                    <h4 className="font-bold mb-2 flex items-center">
+                      <span className="material-icons text-primary mr-2">account_balance</span>
+                      Agent-Driven Crowdfunding
+                    </h4>
+                    <p className="text-sm">The AI Agent evaluates ideas and assists project teams in pre-issuing project tokens to crowdfund necessary stablecoins.</p>
+                  </div>
+
+                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                    <h4 className="font-bold mb-2 flex items-center">
+                      <span className="material-icons text-primary mr-2">assignment</span>
+                      Dual-Track Task Proposals
+                    </h4>
+                    <p className="text-sm">Both the Agent and community members can initiate task proposals, fostering project development and collective brainstorming.</p>
+                  </div>
+
+                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                    <h4 className="font-bold mb-2 flex items-center">
+                      <span className="material-icons text-primary mr-2">groups</span>
+                      Collaborative Task Completion
+                    </h4>
+                    <p className="text-sm">Multiple contributors can stake tokens together to participate in a single task, pooling resources for accelerated completion.</p>
+                  </div>
+
+                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                    <h4 className="font-bold mb-2 flex items-center">
+                      <span className="material-icons text-primary mr-2">balance</span>
+                      AI Fair Reward Distribution
+                    </h4>
+                    <p className="text-sm">Upon task completion, the AI Agent objectively calculates and distributes rewards based on contribution data, releasing staked tokens.</p>
+                  </div>
+
+                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                    <h4 className="font-bold mb-2 flex items-center">
+                      <span className="material-icons text-primary mr-2">security</span>
+                      Community-Based Risk Handling
+                    </h4>
+                    <p className="text-sm">If a task is not completed within the time limit, the community intervenes to decide whether to continue or reopen the task.</p>
+                  </div>
+
+                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                    <h4 className="font-bold mb-2 flex items-center">
+                      <span className="material-icons text-primary mr-2">loop</span>
+                      Continuous Optimization Loop
+                    </h4>
+                    <p className="text-sm">The platform interacts with users via SocialFi channels to gather feedback, continuously optimizing Agent capabilities and governance models.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Platform Comparison Section */}
+          <section className="mb-16">
+            <div className="flex items-center mb-6">
+              <div className="h-10 w-2 bg-secondary rounded-full mr-4"></div>
+              <h2 className="text-3xl font-bold text-base-content">🔄 Platform Comparisons</h2>
+            </div>
+
+            <div className="space-y-8">
+              <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm">
+                <h3 className="text-2xl font-semibold mb-4">Comparison with pump.fun</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                    <h4 className="font-bold mb-2 text-error">pump.fun</h4>
+                    <p className="text-sm">A platform for quickly launching meme coins, focused on short-term hype with limited utility.</p>
+                  </div>
+                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                    <h4 className="font-bold mb-2 text-success">BuidlLand Advantage</h4>
+                    <p className="text-sm">Full lifecycle management for innovative projects, emphasizing real utility and sustainable community-driven development.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm">
+                <h3 className="text-2xl font-semibold mb-4">Comparison with daos.fun</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                    <h4 className="font-bold mb-2 text-error">daos.fun</h4>
+                    <p className="text-sm">Focuses on DAO management for meme coin investment, still primarily speculative and narrowly focused.</p>
+                  </div>
+                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                    <h4 className="font-bold mb-2 text-success">BuidlLand Advantage</h4>
+                    <p className="text-sm">Supports a broader range of project types, features AI-assisted quality control, and enables deeper community participation structures.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm">
+                <h3 className="text-2xl font-semibold mb-4">Comparison with Traditional Web3 Project Launch</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                    <h4 className="font-bold mb-2 text-error">Traditional Method</h4>
+                    <p className="text-sm">Often requires a product/MVP, governance can be centralized, high entry barrier.</p>
+                  </div>
+                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                    <h4 className="font-bold mb-2 text-success">BuidlLand Advantages</h4>
+                    <ul className="list-disc pl-4 text-sm space-y-2">
+                      <li>Decentralized governance with transparent decision-making</li>
+                      <li>Low entry barrier, supporting projects from the idea stage</li>
+                      <li>AI-enhanced project management efficiency</li>
+                      <li>Dynamic staking mechanism prevents development stagnation</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -269,39 +353,29 @@ const AboutPage = () => {
             <div className="space-y-8">
               {/* Phase 1 */}
               <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm border-l-4 border-primary">
-                <h3 className="text-2xl font-semibold mb-4 text-base-content">Phase 1: AI Collaborative Creation</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-base-content">Phase 1: DAO Governance Foundation</h3>
                 <div className="space-y-6">
                   <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
                     <h4 className="font-bold mb-2 flex items-center">
                       <span className="material-icons text-primary mr-2">smart_toy</span>
-                      M1: AI Core Protocol
+                      Key Tool Development
                     </h4>
                     <ul className="list-disc pl-6 space-y-1 text-sm">
-                      <li>Natural language processing for project proposal generation</li>
-                      <li>Technical solution feasibility analysis</li>
+                      <li>Intelligent Proposal System</li>
+                      <li>Community Voting & Decision-Making</li>
+                      <li>Task Management Framework</li>
                     </ul>
                   </div>
                   
                   <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
                     <h4 className="font-bold mb-2 flex items-center">
-                      <span className="material-icons text-primary mr-2">savings</span>
-                      M2: Dynamic Staking Crowdfunding
+                      <span className="material-icons text-primary mr-2">settings</span>
+                      Practical Application
                     </h4>
                     <ul className="list-disc pl-6 space-y-1 text-sm">
-                      <li>Project token fundraising</li>
-                      <li>Smart contract fund locking</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
-                    <h4 className="font-bold mb-2 flex items-center">
-                      <span className="material-icons text-primary mr-2">shopping_cart</span>
-                      M3: Task Market 1.0
-                    </h4>
-                    <ul className="list-disc pl-6 space-y-1 text-sm">
-                      <li>Automated task publishing</li>
-                      <li>Tokenized reward distribution</li>
-                      <li>Social media bot integration</li>
+                      <li>First DAO implementation case study</li>
+                      <li>Internal governance validation</li>
+                      <li>Iterative optimization</li>
                     </ul>
                   </div>
                 </div>
@@ -309,41 +383,29 @@ const AboutPage = () => {
               
               {/* Phase 2 */}
               <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm border-l-4 border-secondary">
-                <h3 className="text-2xl font-semibold mb-4 text-base-content">Phase 2: Community Governance</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-base-content">Phase 2: Contribution Economy System</h3>
                 <div className="space-y-6">
                   <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
                     <h4 className="font-bold mb-2 flex items-center">
                       <span className="material-icons text-secondary mr-2">forum</span>
-                      M4: Decentralized Forum
+                      Core Mechanisms
                     </h4>
                     <ul className="list-disc pl-6 space-y-1 text-sm">
-                      <li>Proposal discussion protocols</li>
-                      <li>Agent participation in discussions</li>
-                      <li>Snapshot voting integration</li>
+                      <li>Multi-dimensional Assessment System</li>
+                      <li>Transparent Reward Distribution</li>
+                      <li>Dynamic Incentive Design</li>
                     </ul>
                   </div>
                   
                   <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
                     <h4 className="font-bold mb-2 flex items-center">
-                      <span className="material-icons text-secondary mr-2">settings</span>
-                      M5: Project Self-governance Protocol
+                      <span className="material-icons text-secondary mr-2">people</span>
+                      Community Collaboration
                     </h4>
                     <ul className="list-disc pl-6 space-y-1 text-sm">
-                      <li>Independent AI Agents for each project</li>
-                      <li>Agent management dashboard</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
-                    <h4 className="font-bold mb-2 flex items-center">
-                      <span className="material-icons text-secondary mr-2">how_to_vote</span>
-                      M6: Governance Mechanism 1.0
-                    </h4>
-                    <ul className="list-disc pl-6 space-y-1 text-sm">
-                      <li>Task qualification review</li>
-                      <li>Dynamic staking voting</li>
-                      <li>Anti-fraud detection</li>
-                      <li>Basic reputation system</li>
+                      <li>Pioneer Web3 community testing</li>
+                      <li>Cross-community experiments</li>
+                      <li>Joint governance case library</li>
                     </ul>
                   </div>
                 </div>
@@ -351,40 +413,29 @@ const AboutPage = () => {
               
               {/* Phase 3 */}
               <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm border-l-4 border-primary">
-                <h3 className="text-2xl font-semibold mb-4 text-base-content">Phase 3: Token Economy Deepening</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-base-content">Phase 3: Agent CEO Capability</h3>
                 <div className="space-y-6">
                   <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
                     <h4 className="font-bold mb-2 flex items-center">
                       <span className="material-icons text-primary mr-2">trending_up</span>
-                      M7: Proposal-Driven Development
+                      Function Development
                     </h4>
                     <ul className="list-disc pl-6 space-y-1 text-sm">
-                      <li>Community proposals → automated tasks</li>
-                      <li>Dual-token staking pools</li>
-                      <li>Customized reward distribution</li>
+                      <li>Project Strategic Planning Module</li>
+                      <li>Resource Coordination System</li>
+                      <li>Community Communication Support</li>
                     </ul>
                   </div>
                   
                   <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
                     <h4 className="font-bold mb-2 flex items-center">
-                      <span className="material-icons text-primary mr-2">currency_exchange</span>
-                      M8: Token Economic Model
+                      <span className="material-icons text-primary mr-2">verified</span>
+                      Practical Validation
                     </h4>
                     <ul className="list-disc pl-6 space-y-1 text-sm">
-                      <li>Yield aggregators</li>
-                      <li>Cross-project token swap protocols</li>
-                      <li>Token leverage staking</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
-                    <h4 className="font-bold mb-2 flex items-center">
-                      <span className="material-icons text-primary mr-2">share</span>
-                      M9: SocialFi Integration
-                    </h4>
-                    <ul className="list-disc pl-6 space-y-1 text-sm">
-                      <li>Social media progress synchronization</li>
-                      <li>Governance data visualization</li>
+                      <li>Agent governance implementation</li>
+                      <li>Collaborative experiments</li>
+                      <li>Effectiveness evaluation system</li>
                     </ul>
                   </div>
                 </div>
@@ -392,41 +443,29 @@ const AboutPage = () => {
               
               {/* Phase 4 */}
               <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm border-l-4 border-secondary">
-                <h3 className="text-2xl font-semibold mb-4 text-base-content">Phase 4: Ecosystem Optimization</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-base-content">Phase 4: Ecosystem Expansion</h3>
                 <div className="space-y-6">
                   <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
                     <h4 className="font-bold mb-2 flex items-center">
                       <span className="material-icons text-secondary mr-2">hub</span>
-                      M10: Multi-chain Collaboration Protocol
+                      Development Directions
                     </h4>
                     <ul className="list-disc pl-6 space-y-1 text-sm">
-                      <li>Cross-chain communication via LayerZero</li>
-                      <li>Multi-chain collaborative development</li>
-                      <li>Cross-chain token exchange gateway</li>
+                      <li>Governance Tool Standardization</li>
+                      <li>Cross-Community Protocol</li>
+                      <li>Adaptive Governance Model</li>
                     </ul>
                   </div>
                   
                   <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
                     <h4 className="font-bold mb-2 flex items-center">
-                      <span className="material-icons text-secondary mr-2">gavel</span>
-                      M11: Governance Mechanism 2.0
+                      <span className="material-icons text-secondary mr-2">diversity_3</span>
+                      Community Network
                     </h4>
                     <ul className="list-disc pl-6 space-y-1 text-sm">
-                      <li>AI+Community dual voting</li>
-                      <li>Reputation-weighted system with POAP integration</li>
-                      <li>Governance-development automation</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
-                    <h4 className="font-bold mb-2 flex items-center">
-                      <span className="material-icons text-secondary mr-2">auto_graph</span>
-                      M12: Ecosystem Optimization
-                    </h4>
-                    <ul className="list-disc pl-6 space-y-1 text-sm">
-                      <li>AI effect evaluation</li>
-                      <li>Multi-language promotion generator</li>
-                      <li>On-chain ecosystem auditing</li>
+                      <li>Buidl Land Governance Alliance</li>
+                      <li>Joint governance hackathons</li>
+                      <li>Best practice guidelines</li>
                     </ul>
                   </div>
                 </div>

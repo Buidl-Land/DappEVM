@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About | BuidlLand",
-  description: "About BuidlLand - Build with AI, Grow with Community, Tokenize with DAO",
+  title: "About | Buidl Land",
+  description: "A Utopia Co-created by Humans and AI - Where human ingenuity and AI merge to build truly valuable Web3 projects!",
 }; 
