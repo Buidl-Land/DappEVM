@@ -3,12 +3,12 @@ _A Utopia Co-Created by Humans and AI!_
 
 ## 1. Project Overview
 
-We’re not just building a platform—we’re igniting a revolution! Buidl Land will become a digital city-state brimming with passion and creativity, where human ingenuity and AI merge in unprecedented ways to collaboratively conceive, build, and deliver truly valuable, meaningful, world-changing Web3 projects and communities!
+We're not just building a platform—we're igniting a revolution! Buidl Land will become a digital city-state brimming with passion and creativity, where human ingenuity and AI merge in unprecedented ways to collaboratively conceive, build, and deliver truly valuable, meaningful, world-changing Web3 projects and communities!
 
 Say goodbye to cold capital games and embrace a fiery era of co-creation! Forget the old models dominated by a handful of VCs, devoid of soul. At Buidl Land, we firmly believe:
 
 - **Every brilliant idea deserves to be seen!** No matter who you are, if you have an idea to change the world, this is your stage. AI will help turn your vision into reality.
-- **Every meaningful contribution must be respected!** We’ll use the fairest, most transparent mechanisms (objectively evaluated by AI) to ensure your talent and efforts receive the rich rewards they deserve.
+- **Every meaningful contribution must be respected!** We'll use the fairest, most transparent mechanisms (objectively evaluated by AI) to ensure your talent and efforts receive the rich rewards they deserve.
 - **AI is no longer a cold tool but a partner fighting alongside you!** AI will deeply empower every stage—ideation, incubation, development, collaboration, and even community governance—unlocking limitless potential and shattering all impossibilities!
 
 ### Our Core Mission:
@@ -18,18 +18,44 @@ Say goodbye to cold capital games and embrace a fiery era of co-creation! Forget
 - **Empower Community Autonomy:** Build an AI-enhanced, community-led governance framework. DAO members can initiate proposals, from project decisions and fund management (co-managed by AI+DAO) to recruitment and task reviews, returning power to the community and letting collective wisdom shape the future—free from centralized VC control. Start with AI + community committees, transitioning to a fully decentralized DAO.
 - **Harness Social Power:** Leverage the viral spread of Web3 social platforms (SocialFi, like Farcaster/Twitter) to ignite community passion, engage deeply with users, forge consensus, amplify influence, and co-write a new chapter for Web3!
 
-Join us—not just to participate in a project, but to co-create a new Web3 era for creators, contributors, and dreamers! Let AI be our wings, let the community be our strength, and together, let’s Buidl miracles!
+Join us—not just to participate in a project, but to co-create a new Web3 era for creators, contributors, and dreamers! Let AI be our wings, let the community be our strength, and together, let's Buidl miracles!
 
 ## 2. How Buidl Land Works
 
+### 2.1 Workflow Process
+
+```mermaid
+graph TD
+    A[User/Community Member] -->|Submit idea via @AI Agent| B[AI Agent evaluates idea]
+    B -->|Generate structured proposal| C[Proposal published]
+    C -->|Pre-issue token crowdfunding| D[Project launch pool]
+
+    E[AI Agent] -->|Propose tasks| F[Task pool]
+    G[Community Member] -->|Propose tasks| F
+
+    F -->|Task assignment| H[Contributors stake tokens to participate]
+    H -->|Complete task| I[AI evaluates contribution]
+    I -->|Fair reward distribution| J[Unlock staked tokens + rewards]
+
+    H -->|Miss deadline| K[Community voting decision]
+    K -->|Continue task| H
+    K -->|Reopen task| F
+    K -->|Partial stake deduction| L[Risk management]
+
+    M[SocialFi channels] -->|User feedback| N[Continuous optimization]
+    N -->|Improve Agent capabilities| E
+    N -->|Enhance governance model| O[DAO governance]
+    N -->|Optimize workflow| P[Platform upgrade]
+```
+
 ### 2.2 Core Features of the Process
 
-- **Diverse Idea Sources:** Users can quickly submit via @ Agent or engage in deep brainstorming with Agents and publish mature ideas via MCP.
+- **Diverse Idea Sources:** Users can quickly submit via @Agent or engage in deep brainstorming with Agents and publish mature ideas via MCP.
 - **Agent-Driven Crowdfunding:** AI Agents not only evaluate ideas but also assist project teams in pre-issuing tokens to crowdfund stablecoins, fueling project launches.
 - **Dual-Track Task Proposals:** Both Agents and community members can propose tasks, fostering project growth and collective brainstorming.
 - **Collaborative Task Execution:** A single task proposal can be tackled by multiple contributors staking tokens together, pooling strengths for faster completion.
 - **AI Fair Reward Distribution:** Upon task completion, AI Agents objectively calculate and distribute rewards based on contribution data, releasing staked tokens to ensure fair returns.
-- **Community Risk Management:** If a task isn’t completed within the deadline, the community steps in to decide whether to continue or reopen it, potentially deducting partial staked tokens, creating a closed-loop risk system.
+- **Community Risk Management:** If a task isn't completed within the deadline, the community steps in to decide whether to continue or reopen it, potentially deducting partial staked tokens, creating a closed-loop risk system.
 - **Continuous Optimization Loop:** The platform interacts with users via SocialFi channels (e.g., Farcaster, Twitter), gathering feedback to refine Agent capabilities, governance models, and overall workflows.
 
 ## 3. Core Problems Buidl Land Solves
