@@ -58,9 +58,10 @@ const AboutPage = () => {
 
         {/* Main Content Area */}
         <div className="prose prose-lg dark:prose-invert mx-auto max-w-4xl">
-          <div className="bg-white/80 dark:bg-gray-800/80 rounded-xl shadow-xl p-8 mb-12 transform transition-all hover:shadow-2xl backdrop-blur-sm">
+          <div className="bg-white/40 dark:bg-gray-800/40 rounded-xl shadow-xl p-8 mb-12 transform transition-all hover:shadow-2xl backdrop-blur-sm">
             <p className="text-lg leading-relaxed">
-              We are not just building a platform; we are igniting a revolution! Buidl Land will become a digital city-state brimming with passion and creativity, where human ingenuity and AI merge in unprecedented ways to jointly nurture and build truly valuable, meaningful, and world-changing Web3 projects and communities!
+              A Web3 innovation incubation platform based on pre-issuance token crowdfunding and community DAO governance, 
+              enabling AI and token holders to jointly support project idea incubation, development, and implementation.
             </p>
           </div>
 
@@ -71,34 +72,34 @@ const AboutPage = () => {
               <h2 className="text-3xl font-bold text-base-content">📋 Project Overview</h2>
             </div>
             
-            <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-8 backdrop-blur-sm">
+            <div className="bg-white/40 dark:bg-gray-800/40 rounded-xl p-8 backdrop-blur-sm">
               <h3 className="text-2xl font-semibold mb-4 text-base-content">Vision and Core Values</h3>
               <p className="mb-4">
                 Farewell to cold capital games, embrace the fiery era of co-creation! Forget the old models dominated by a few VCs, lacking soul! In Buidl Land, we firmly believe:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md hover:shadow-lg transition-all backdrop-blur-sm">
+                <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg shadow-md hover:shadow-lg transition-all backdrop-blur-sm">
                   <h4 className="font-bold mb-2 flex items-center">
                     <span className="material-icons text-primary mr-2">people</span>
                     Every Brilliant Idea Deserves to be Seen
                   </h4>
                   <p className="text-sm">No matter who you are, if you have a world-changing idea, this is your stage. AI will help you turn your ideas into reality.</p>
                 </div>
-                <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md hover:shadow-lg transition-all backdrop-blur-sm">
+                <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg shadow-md hover:shadow-lg transition-all backdrop-blur-sm">
                   <h4 className="font-bold mb-2 flex items-center">
                     <span className="material-icons text-primary mr-2">account_balance</span>
                     Every Effective Contribution Must be Respected
                   </h4>
                   <p className="text-sm">We will use the fairest, most transparent mechanisms (objectively assessed by AI) to ensure your talent and effort receive the substantial rewards they deserve.</p>
                 </div>
-                <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md hover:shadow-lg transition-all backdrop-blur-sm">
+                <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg shadow-md hover:shadow-lg transition-all backdrop-blur-sm">
                   <h4 className="font-bold mb-2 flex items-center">
                     <span className="material-icons text-primary mr-2">smart_toy</span>
                     AI is a Partner Fighting Side-by-Side
                   </h4>
                   <p className="text-sm">AI will deeply empower every stage of a project – from ideation, incubation, development, collaboration, to even community governance.</p>
                 </div>
-                <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md hover:shadow-lg transition-all backdrop-blur-sm">
+                <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg shadow-md hover:shadow-lg transition-all backdrop-blur-sm">
                   <h4 className="font-bold mb-2 flex items-center">
                     <span className="material-icons text-primary mr-2">workspace_premium</span>
                     Community-Driven Innovation
@@ -143,6 +144,61 @@ const AboutPage = () => {
             </div>
           </section>
 
+          {/* GAME Framework Section */}
+          <section className="mb-16">
+            <div className="flex items-center mb-4">
+              <div className="h-10 w-2 bg-primary rounded-full mr-4"></div>
+              <h2 className="text-3xl font-bold text-base-content">🎮 GAME Framework</h2>
+            </div>
+            
+            <div className="bg-white/40 dark:bg-gray-800/40 rounded-xl p-6 backdrop-blur-sm">
+              <h3 className="text-xl font-semibold mb-2 text-base-content">Powerful AI Agent Framework</h3>
+              <p className="mb-4 text-base">
+                BuidlLand is powered by the revolutionary GAME framework (Generative Agent Management Engine), 
+                which enables AI agents to work autonomously and collaboratively with humans.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg">
+                  <div className="flex items-center mb-2">
+                    <span className="material-icons text-primary text-xl mr-2">psychology</span>
+                    <h4 className="text-lg font-bold">Agent (High-level Planner)</h4>
+                  </div>
+                  <p className="text-sm">
+                    Autonomous AI entities that can make strategic decisions, manage resources, and coordinate complex tasks
+                  </p>
+                </div>
+
+                <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg">
+                  <div className="flex items-center mb-2">
+                    <span className="material-icons text-primary text-xl mr-2">engineering</span>
+                    <h4 className="text-lg font-bold">Worker (Low-level Planner)</h4>
+                  </div>
+                  <p className="text-sm">
+                    Specialized AI components that execute specific tasks and provide feedback to the main agent
+                  </p>
+                </div>
+
+                <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg">
+                  <div className="flex items-center mb-2">
+                    <span className="material-icons text-primary text-xl mr-2">functions</span>
+                    <h4 className="text-lg font-bold">Function</h4>
+                  </div>
+                  <p className="text-sm">
+                    Executable actions that agents can perform, with clear inputs, outputs, and error handling
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-4 p-4 bg-white/20 dark:bg-gray-800/20 rounded-lg">
+                <p className="text-sm">
+                  The GAME framework enables BuidlLand to create powerful AI agents that can assist in project development, 
+                  community management, and DAO governance with unprecedented efficiency and transparency.
+                </p>
+              </div>
+            </div>
+          </section>
+
           {/* Core Problems Solved Section */}
           <section className="mb-16">
             <div className="flex items-center mb-6">
@@ -151,7 +207,7 @@ const AboutPage = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm">
+              <div className="bg-white/40 dark:bg-gray-800/40 rounded-xl p-6 backdrop-blur-sm">
                 <div className="flex items-center mb-3">
                   <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-3">1</div>
                   <h3 className="text-xl font-bold text-base-content">Web3 Bubble & Trust Crisis</h3>
@@ -163,7 +219,7 @@ const AboutPage = () => {
                 </ul>
               </div>
               
-              <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm">
+              <div className="bg-white/40 dark:bg-gray-800/40 rounded-xl p-6 backdrop-blur-sm">
                 <div className="flex items-center mb-3">
                   <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-3">2</div>
                   <h3 className="text-xl font-bold text-base-content">Innovation Monopolization</h3>
@@ -175,7 +231,7 @@ const AboutPage = () => {
                 </ul>
               </div>
               
-              <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm">
+              <div className="bg-white/40 dark:bg-gray-800/40 rounded-xl p-6 backdrop-blur-sm">
                 <div className="flex items-center mb-3">
                   <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-3">3</div>
                   <h3 className="text-xl font-bold text-base-content">Token Utility Issues</h3>
@@ -187,7 +243,7 @@ const AboutPage = () => {
                 </ul>
               </div>
               
-              <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm">
+              <div className="bg-white/40 dark:bg-gray-800/40 rounded-xl p-6 backdrop-blur-sm">
                 <div className="flex items-center mb-3">
                   <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-3">4</div>
                   <h3 className="text-xl font-bold text-base-content">Inefficient Collaboration</h3>
@@ -208,7 +264,7 @@ const AboutPage = () => {
               <h2 className="text-3xl font-bold text-base-content">🔄 Project Flowchart</h2>
             </div>
             
-            <div className="bg-white/80 dark:bg-gray-800/80 rounded-xl shadow-xl p-6 mb-8 backdrop-blur-sm">
+            <div className="bg-white/40 dark:bg-gray-800/40 rounded-xl shadow-xl p-6 mb-8 backdrop-blur-sm">
               <div className="flex justify-center">
                 <Image 
                   src={resolvedTheme === 'dark' 
@@ -226,7 +282,7 @@ const AboutPage = () => {
                 <h3 className="text-2xl font-semibold mb-4">Core Features of the Flowchart</h3>
                 
                 <div className="space-y-4">
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg">
                     <h4 className="font-bold mb-2 flex items-center">
                       <span className="material-icons text-primary mr-2">lightbulb</span>
                       Diverse Idea Sources
@@ -234,7 +290,7 @@ const AboutPage = () => {
                     <p className="text-sm">Users can quickly submit ideas via @ Agent or engage in deep brainstorming with the Agent and publish more mature ideas via MCP.</p>
                   </div>
 
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg">
                     <h4 className="font-bold mb-2 flex items-center">
                       <span className="material-icons text-primary mr-2">account_balance</span>
                       Agent-Driven Crowdfunding
@@ -242,7 +298,7 @@ const AboutPage = () => {
                     <p className="text-sm">The AI Agent evaluates ideas and assists project teams in pre-issuing project tokens to crowdfund necessary stablecoins.</p>
                   </div>
 
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg">
                     <h4 className="font-bold mb-2 flex items-center">
                       <span className="material-icons text-primary mr-2">assignment</span>
                       Dual-Track Task Proposals
@@ -250,7 +306,7 @@ const AboutPage = () => {
                     <p className="text-sm">Both the Agent and community members can initiate task proposals, fostering project development and collective brainstorming.</p>
                   </div>
 
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg">
                     <h4 className="font-bold mb-2 flex items-center">
                       <span className="material-icons text-primary mr-2">groups</span>
                       Collaborative Task Completion
@@ -258,7 +314,7 @@ const AboutPage = () => {
                     <p className="text-sm">Multiple contributors can stake tokens together to participate in a single task, pooling resources for accelerated completion.</p>
                   </div>
 
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg">
                     <h4 className="font-bold mb-2 flex items-center">
                       <span className="material-icons text-primary mr-2">balance</span>
                       AI Fair Reward Distribution
@@ -266,7 +322,7 @@ const AboutPage = () => {
                     <p className="text-sm">Upon task completion, the AI Agent objectively calculates and distributes rewards based on contribution data, releasing staked tokens.</p>
                   </div>
 
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg">
                     <h4 className="font-bold mb-2 flex items-center">
                       <span className="material-icons text-primary mr-2">security</span>
                       Community-Based Risk Handling
@@ -274,7 +330,7 @@ const AboutPage = () => {
                     <p className="text-sm">If a task is not completed within the time limit, the community intervenes to decide whether to continue or reopen the task.</p>
                   </div>
 
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg">
                     <h4 className="font-bold mb-2 flex items-center">
                       <span className="material-icons text-primary mr-2">loop</span>
                       Continuous Optimization Loop
@@ -294,42 +350,42 @@ const AboutPage = () => {
             </div>
 
             <div className="space-y-8">
-              <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm">
+              <div className="bg-white/40 dark:bg-gray-800/40 rounded-xl p-6 backdrop-blur-sm">
                 <h3 className="text-2xl font-semibold mb-4">Comparison with pump.fun</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg">
                     <h4 className="font-bold mb-2 text-error">pump.fun</h4>
                     <p className="text-sm">A platform for quickly launching meme coins, focused on short-term hype with limited utility.</p>
                   </div>
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg">
                     <h4 className="font-bold mb-2 text-success">BuidlLand Advantage</h4>
                     <p className="text-sm">Full lifecycle management for innovative projects, emphasizing real utility and sustainable community-driven development.</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm">
+              <div className="bg-white/40 dark:bg-gray-800/40 rounded-xl p-6 backdrop-blur-sm">
                 <h3 className="text-2xl font-semibold mb-4">Comparison with daos.fun</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg">
                     <h4 className="font-bold mb-2 text-error">daos.fun</h4>
                     <p className="text-sm">Focuses on DAO management for meme coin investment, still primarily speculative and narrowly focused.</p>
                   </div>
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg">
                     <h4 className="font-bold mb-2 text-success">BuidlLand Advantage</h4>
                     <p className="text-sm">Supports a broader range of project types, features AI-assisted quality control, and enables deeper community participation structures.</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm">
+              <div className="bg-white/40 dark:bg-gray-800/40 rounded-xl p-6 backdrop-blur-sm">
                 <h3 className="text-2xl font-semibold mb-4">Comparison with Traditional Web3 Project Launch</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg">
                     <h4 className="font-bold mb-2 text-error">Traditional Method</h4>
                     <p className="text-sm">Often requires a product/MVP, governance can be centralized, high entry barrier.</p>
                   </div>
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg">
                     <h4 className="font-bold mb-2 text-success">BuidlLand Advantages</h4>
                     <ul className="list-disc pl-4 text-sm space-y-2">
                       <li>Decentralized governance with transparent decision-making</li>
@@ -352,10 +408,10 @@ const AboutPage = () => {
             
             <div className="space-y-8">
               {/* Phase 1 */}
-              <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm border-l-4 border-primary">
+              <div className="bg-white/40 dark:bg-gray-800/40 rounded-xl p-6 backdrop-blur-sm border-l-4 border-primary">
                 <h3 className="text-2xl font-semibold mb-4 text-base-content">Phase 1: DAO Governance Foundation</h3>
                 <div className="space-y-6">
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg shadow-md backdrop-blur-sm">
                     <h4 className="font-bold mb-2 flex items-center">
                       <span className="material-icons text-primary mr-2">smart_toy</span>
                       Key Tool Development
@@ -367,7 +423,7 @@ const AboutPage = () => {
                     </ul>
                   </div>
                   
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg shadow-md backdrop-blur-sm">
                     <h4 className="font-bold mb-2 flex items-center">
                       <span className="material-icons text-primary mr-2">settings</span>
                       Practical Application
@@ -382,10 +438,10 @@ const AboutPage = () => {
               </div>
               
               {/* Phase 2 */}
-              <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm border-l-4 border-secondary">
+              <div className="bg-white/40 dark:bg-gray-800/40 rounded-xl p-6 backdrop-blur-sm border-l-4 border-secondary">
                 <h3 className="text-2xl font-semibold mb-4 text-base-content">Phase 2: Contribution Economy System</h3>
                 <div className="space-y-6">
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg shadow-md backdrop-blur-sm">
                     <h4 className="font-bold mb-2 flex items-center">
                       <span className="material-icons text-secondary mr-2">forum</span>
                       Core Mechanisms
@@ -397,7 +453,7 @@ const AboutPage = () => {
                     </ul>
                   </div>
                   
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg shadow-md backdrop-blur-sm">
                     <h4 className="font-bold mb-2 flex items-center">
                       <span className="material-icons text-secondary mr-2">people</span>
                       Community Collaboration
@@ -412,10 +468,10 @@ const AboutPage = () => {
               </div>
               
               {/* Phase 3 */}
-              <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm border-l-4 border-primary">
+              <div className="bg-white/40 dark:bg-gray-800/40 rounded-xl p-6 backdrop-blur-sm border-l-4 border-primary">
                 <h3 className="text-2xl font-semibold mb-4 text-base-content">Phase 3: Agent CEO Capability</h3>
                 <div className="space-y-6">
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg shadow-md backdrop-blur-sm">
                     <h4 className="font-bold mb-2 flex items-center">
                       <span className="material-icons text-primary mr-2">trending_up</span>
                       Function Development
@@ -427,7 +483,7 @@ const AboutPage = () => {
                     </ul>
                   </div>
                   
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg shadow-md backdrop-blur-sm">
                     <h4 className="font-bold mb-2 flex items-center">
                       <span className="material-icons text-primary mr-2">verified</span>
                       Practical Validation
@@ -442,10 +498,10 @@ const AboutPage = () => {
               </div>
               
               {/* Phase 4 */}
-              <div className="bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 backdrop-blur-sm border-l-4 border-secondary">
+              <div className="bg-white/40 dark:bg-gray-800/40 rounded-xl p-6 backdrop-blur-sm border-l-4 border-secondary">
                 <h3 className="text-2xl font-semibold mb-4 text-base-content">Phase 4: Ecosystem Expansion</h3>
                 <div className="space-y-6">
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg shadow-md backdrop-blur-sm">
                     <h4 className="font-bold mb-2 flex items-center">
                       <span className="material-icons text-secondary mr-2">hub</span>
                       Development Directions
@@ -457,7 +513,7 @@ const AboutPage = () => {
                     </ul>
                   </div>
                   
-                  <div className="bg-base-100/90 dark:bg-gray-700/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
+                  <div className="bg-white/20 dark:bg-gray-800/20 p-4 rounded-lg shadow-md backdrop-blur-sm">
                     <h4 className="font-bold mb-2 flex items-center">
                       <span className="material-icons text-secondary mr-2">diversity_3</span>
                       Community Network
