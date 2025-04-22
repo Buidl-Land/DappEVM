@@ -17,9 +17,9 @@ const ProjectsContent = () => {
   const projectIds = [1, 2, 3];
 
   return (
-    <div className="flex flex-col pt-16 min-h-screen animate-fade-in">
+    <div className="flex flex-col min-h-screen animate-fade-in">
       {/* SVG Background */}
-      <div className="fixed inset-0 z-[-1] opacity-5">
+      <div className="fixed top-0 left-0 w-full h-full z-[-1] opacity-5">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -43,13 +43,13 @@ const ProjectsContent = () => {
       </div>
 
       {/* Header Section */}
-      <div className="w-full bg-gradient-to-b to-transparent from-base-200/50 mt-0">
-        <div className="px-4 py-8 mx-auto max-w-7xl sm:py-12">
+      <div className="w-full bg-gradient-to-b to-transparent from-base-200/50">
+        <div className="px-4 pt-24 pb-6 mx-auto max-w-7xl">
           <div className="relative">
             <div className="absolute -top-6 -left-6 w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 blur-xl"></div>
             <div className="absolute top-1/2 -translate-y-1/2 right-24 w-72 h-72 rounded-full bg-gradient-to-tr from-accent/30 to-primary/30 blur-xl animate-pulse"></div>
 
-            <h1 className="mb-4 text-3xl font-bold sm:mb-6 sm:text-5xl animate-slide-up relative z-10">
+            <h1 className="mb-4 text-4xl font-bold sm:mb-6 sm:text-6xl animate-slide-up relative z-10">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary font-extrabold">
                 Buidl Land
               </span>
@@ -57,7 +57,7 @@ const ProjectsContent = () => {
             </h1>
 
             <div className="relative mb-8 max-w-3xl">
-              <p className="text-base sm:text-xl leading-relaxed opacity-90 delay-100 animate-slide-up">
+              <p className="text-xl sm:text-3xl leading-relaxed opacity-90 delay-100 animate-slide-up">
                 <span className="font-semibold">Where AI and community unite</span> to transform innovative ideas into
                 <span className="relative inline-block mx-1">
                   <span className="relative z-10">Web3 realities</span>
@@ -69,7 +69,7 @@ const ProjectsContent = () => {
                   ideas, generate structured proposals, and facilitate community-driven governance for a truly
                   decentralized innovation ecosystem.
                 </span>
-                <span className="block mt-2 text-sm sm:text-base italic opacity-80">
+                <span className="block mt-2 text-lg sm:text-xl italic opacity-80">
                   Breaking traditional VC monopolies through community-powered token economics and AI-assisted project
                   development — where every contributor is rewarded fairly based on their value creation.
                 </span>
@@ -78,7 +78,7 @@ const ProjectsContent = () => {
           </div>
 
           {/* Filters */}
-          <div className="flex flex-col sm:flex-row w-full gap-3 mb-2 delay-200 sm:gap-4 sm:mb-4 animate-slide-up">
+          <div className="flex flex-col sm:flex-row w-full gap-3 mb-4 delay-200 sm:gap-4 animate-slide-up">
             {/* Filter Group */}
             <div className="w-full sm:w-2/5 rounded-lg shadow-md join bg-base-100">
               <button
@@ -87,7 +87,7 @@ const ProjectsContent = () => {
                 }`}
                 onClick={() => setFilter("all")}
               >
-                All Projects
+                <span className="text-lg">All Projects</span>
               </button>
               <button
                 className={`flex-1 btn join-item btn-sm sm:btn-md hover:bg-primary/30 ${
@@ -95,7 +95,7 @@ const ProjectsContent = () => {
                 }`}
                 onClick={() => setFilter("funding")}
               >
-                Funding Open
+                <span className="text-lg">Funding Open</span>
               </button>
               <button
                 className={`flex-1 btn join-item btn-sm sm:btn-md hover:bg-primary/30 ${
@@ -103,7 +103,7 @@ const ProjectsContent = () => {
                 }`}
                 onClick={() => setFilter("tasks")}
               >
-                Tasks Available
+                <span className="text-lg">Tasks Available</span>
               </button>
             </div>
 
@@ -115,7 +115,7 @@ const ProjectsContent = () => {
                 }`}
                 onClick={() => setStatus("all")}
               >
-                All Status
+                <span className="text-lg">All Status</span>
               </button>
               <button
                 className={`flex-1 btn join-item btn-sm sm:btn-md hover:bg-accent/30 ${
@@ -123,7 +123,7 @@ const ProjectsContent = () => {
                 }`}
                 onClick={() => setStatus("active")}
               >
-                Active
+                <span className="text-lg">Active</span>
               </button>
               <button
                 className={`flex-1 btn join-item btn-sm sm:btn-md hover:bg-accent/30 ${
@@ -131,7 +131,7 @@ const ProjectsContent = () => {
                 }`}
                 onClick={() => setStatus("completed")}
               >
-                Completed
+                <span className="text-lg">Completed</span>
               </button>
             </div>
 
@@ -139,7 +139,7 @@ const ProjectsContent = () => {
             <input
               type="text"
               placeholder="Search projects..."
-              className="w-full sm:w-1/4 shadow-md input input-sm sm:input-md input-bordered bg-base-100 focus:border-primary/50"
+              className="w-full sm:w-1/4 shadow-md input input-sm sm:input-md input-bordered bg-base-100 focus:border-primary/50 text-lg"
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
             />
@@ -157,7 +157,7 @@ const ProjectsContent = () => {
 
         {projectIds.length === 0 && (
           <div className="py-12 text-center shadow-lg sm:py-16 card bg-base-100">
-            <p className="text-lg opacity-60">No projects found matching your criteria.</p>
+            <p className="text-2xl opacity-60">No projects found matching your criteria.</p>
             <button
               className="mx-auto mt-4 btn btn-primary btn-sm"
               onClick={() => {
@@ -166,7 +166,7 @@ const ProjectsContent = () => {
                 setSearchTerm("");
               }}
             >
-              Clear Filters
+              <span className="text-lg">Clear Filters</span>
             </button>
           </div>
         )}
@@ -177,7 +177,7 @@ const ProjectsContent = () => {
 
 const ProjectsPage = () => {
   return (
-    <Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading projects...</div>}>
+    <Suspense fallback={<div className="flex justify-center items-center min-h-screen text-2xl">Loading projects...</div>}>
       <ProjectsContent />
     </Suspense>
   );

@@ -3,9 +3,18 @@
 @import "tailwindcss/utilities";
 @import "./theme.css";
 
+@font-face {
+  font-family: 'Iceland';
+  src: url('/fonts/Iceland-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   min-height: 100vh;
   font-family:
+    'Iceland',
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -27,6 +36,7 @@ h4 {
   line-height: 1.2;
   font-weight: 700;
   color: var(--text-primary);
+  font-family: 'Iceland', sans-serif;
 }
 
 h1 {
@@ -46,6 +56,7 @@ p {
   margin: 1rem 0;
   line-height: 1.6;
   color: var(--text-secondary);
+  font-family: 'Iceland', sans-serif;
 }
 
 /* Card Styles */
@@ -53,6 +64,7 @@ p {
   @apply rounded-lg border transition-all duration-200;
   background: var(--bg-secondary);
   border-color: var(--border-color);
+  font-family: 'Iceland', sans-serif;
 }
 
 .card:hover {
@@ -64,6 +76,7 @@ p {
 .btn {
   @apply font-semibold rounded-lg transition-all duration-200;
   padding: 0.75rem 1.5rem;
+  font-family: 'Iceland', sans-serif;
 }
 
 .btn:hover {
