@@ -30,3 +30,36 @@ export const baseSepolia = defineChain({
     },
   },
 });
+
+export const eduTestnet = defineChain({
+  id: 656476,
+  name: "EDU Testnet",
+  network: "edu-testnet",
+  nativeCurrency: {
+    decimals: 18,
+    name: "EDU Token",
+    symbol: "EDU",
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://rpc.open-campus-codex.gelato.digital"],
+    },
+    public: {
+      http: ["https://rpc.open-campus-codex.gelato.digital"],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "EDU Testnet Explorer",
+      url: "https://opencampus-codex.blockscout.com",
+    },
+  },
+  contracts: {
+    multicall3: {
+      address: "0xcA11bde05977b3631167028862bE2a173976CA11",
+      blockCreated: 1,
+    },
+  },
+  testnet: true,
+  sourceId: 421614, // Arbitrum Sepolia as settlement layer
+});
