@@ -16,14 +16,13 @@ export const AskAgentButton = () => {
   return (
     <div className="fixed flex justify-end items-center w-full z-20 p-4 bottom-0 right-0 pointer-events-none">
       <div className={`relative pointer-events-auto group ${isLocalNetwork ? "self-end md:self-auto" : ""}`}>
-        <div className="absolute inset-0 bg-black rounded-full blur-md opacity-50 group-hover:opacity-80 transition-all duration-300"></div>
-        <button className="btn bg-black hover:bg-black/80 text-white border-none rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-medium relative z-10 p-0 h-10 min-h-0 overflow-hidden">
-          <div className="flex items-center justify-center gap-2 px-4 h-full">
+        <div className="absolute inset-0 bg-gray-100 rounded-full blur-md opacity-50 group-hover:opacity-80 transition-all duration-300"></div>
+        <button className="btn bg-gray-200 hover:bg-gray-200 text-gray-700 border-none rounded-full shadow-sm hover:shadow hover:scale-105 transition-all duration-300 font-medium relative z-10 p-0 h-12 min-h-0 overflow-hidden">
+          <div className="flex items-center justify-center gap-1 px-2 h-full">
             <span className="relative inline-block leading-tight text-center">
-              Ask Agent
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white/70 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+              <span className="text-xl">💡</span><span className="text-base">Up My Idea</span>
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gray-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
             </span>
-            <ArrowRightIcon className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" />
           </div>
         </button>
       </div>

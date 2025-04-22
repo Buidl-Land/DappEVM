@@ -1198,7 +1198,7 @@ const DashboardContent = () => {
                             <p className="text-xs font-medium">Contributed to GenomeGuard</p>
                             <span className="text-2xs opacity-60 whitespace-nowrap">1 minute ago</span>
                           </div>
-                          <p className="text-2xs opacity-70 truncate mt-0.5">You contributed 50,000 USDC to GenomeGuard project</p>
+                          <p className="text-2xs opacity-70 truncate mt-0.5">You contributed 10,000 USDC to TokenBlitzBot project</p>
                         </div>
                       </div>
                       

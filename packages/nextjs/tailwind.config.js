@@ -5,6 +5,10 @@ module.exports = {
   darkMode: ["class", '[data-theme="dark"]'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Iceland', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        iceland: ['Iceland', 'sans-serif'],
+      },
       colors: {
         "primary-light": "#4F46E5", // Deep indigo blue
         "primary-dark": "#8B5CF6", // Bright purple
